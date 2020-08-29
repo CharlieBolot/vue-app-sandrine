@@ -1,28 +1,26 @@
 <template>
     <div id="page">
-        <h1>Ma page</h1>
-        <p>
-           C'est MA Page !
-        </p>
-         <button type="button" v-on:click="home()">Déconnexion</button>
-         <test count=0 />
-         <h3>Test bouton couleur </h3>
-         <couleur couleur=#fffAAA btn='vas-y clique !' @newcouleur="$event"/>
-         <couleur couleur=#fffBBB btn='sinon là' @newcouleur="$event"/>
-         <couleur couleur=#fffCCC btn='ou ici !' @newcouleur="$event"/>
+        <h1>Notre page</h1>
+        <p>Chère Sandrine bienvenu dans ce petit quizz</p>
+        <p>Le but de cet exercice est de vérifier si tu nous connais bien</p>
+        <p>Ou alors de voir si en 10 ans on a oublié un certain nombre de choses</p>
+        <p>Si tu es prête</p>
+
+
+
+
+
+         <button type="button" v-on:click="home()">Clique ici</button>
+      
     </div>
 </template>
 
 <script>
-import test from '@/components/test.vue';
-import couleur from '@/components/couleur.vue';
+
 
 export default {
   name: 'page',
-  components: {
-    test,
-    couleur,
-  },
+
   data() {
     return {};
   },
@@ -30,7 +28,7 @@ export default {
   methods: {
     home() {
       this.$emit('authenticated', false);
-      this.$router.replace({ name: 'Home' });
+      this.$router.replace({ name: 'page1' });
     },
   },
 };
